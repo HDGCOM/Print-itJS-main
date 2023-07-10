@@ -48,14 +48,27 @@ function showSlide(index) {
 }
 
 // Ajoutez des Event Listeners sur les flèches gauche et droite
+
 arrowLeft.addEventListener("click", function () {
   const prevSlide = currentSlide - 1;
-  showSlide(prevSlide);
+  // Vérifier si le slide courant est le premier slide
+  if (prevSlide < 0) {
+    // Définir l'index sur le dernier slide
+    showSlide(slides.length - 1);
+  } else {
+    showSlide(prevSlide);
+  }
 });
 
 arrowRight.addEventListener("click", function () {
   const nextSlide = currentSlide + 1;
-  showSlide(nextSlide);
+  // Vérifier si le slide courant est le dernier slide
+  if (nextSlide >= slides.length) {
+    // Définir l'index sur le premier slide
+    showSlide(0);
+  } else {
+    showSlide(nextSlide);
+  }
 });
 
 // Gérer le clic sur les points (dots)
