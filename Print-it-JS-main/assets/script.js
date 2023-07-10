@@ -47,13 +47,12 @@ function showSlide(index) {
   currentSlide = index;
 }
 
-// Gérer le clic sur la flèche gauche
+// Ajoutez des Event Listeners sur les flèches gauche et droite
 arrowLeft.addEventListener("click", function () {
   const prevSlide = currentSlide - 1;
   showSlide(prevSlide);
 });
 
-// Gérer le clic sur la flèche droite
 arrowRight.addEventListener("click", function () {
   const nextSlide = currentSlide + 1;
   showSlide(nextSlide);
